@@ -15,6 +15,7 @@ panic-probe = { version = "0.3", features = ["print-defmt"] }
 
 # We're using a Waveshare RP2040-Zero develepment board.
 waveshare-rp2040-zero = "0.8.0" #https://crates.io/crates/waveshare-rp2040-zero#using
+lcd1602-rs = "0.1.0"
 
 # cargo build/run
 [profile.dev]
