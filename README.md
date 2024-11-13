@@ -1,15 +1,22 @@
-# Project template for rp2040-hal
+# Serial Character Display
 
-This template is intended as a starting point for developing your own firmware based on the rp2040-hal.
+Serial Character Display powered by an RP2040 attached to a 1602a Display.
 
 It includes all of the `knurling-rs` tooling as showcased in https://github.com/knurling-rs/app-template (`defmt`, `defmt-rtt`, `panic-probe`, `flip-link`) to make development as easy as possible.
 
-`probe-rs` is configured as the default runner, so you can start your program as easy as
+`elf2uf2-rs` is configured as the default runner, so you can start your program in 4 simple steps:
+0. Unplug the RP2040-Zero
+1. Press and hold the `BOOT` button
+2. Plug the RP2040-Zero in
+3. Wait for a storage device to appear
+4. Run the follwing command:
 ```sh
 cargo run --release
 ```
 
-If you aren't using a debugger (or want to use other debugging configurations), check out [alternative runners](#alternative-runners) for other options
+If you are using a debugger, check out [alternative runners](#alternative-runners) for other options.
+
+> _This Repository is based on ([my fork](https://github.com/moritztim/rp2040-project-template) of) the [RP2040 Project Template](https://github.com/rp-rs/rp2040-project-template)._
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -39,7 +46,9 @@ If you aren't using a debugger (or want to use other debugging configurations), 
 
 - flip-link - this allows you to detect stack-overflows on the first core, which is the only supported target for now.
 
-- (by default) A [`probe-rs` installation](https://probe.rs/docs/getting-started/installation/)
+### If you're using a debug probe:
+
+- A [`probe-rs` installation](https://probe.rs/docs/getting-started/installation/)
 
 - A [`probe-rs` compatible](https://probe.rs/docs/getting-started/probe-setup/) probe
 
@@ -57,10 +66,9 @@ If you aren't using a debugger (or want to use other debugging configurations), 
 ```sh
 rustup target install thumbv6m-none-eabi
 cargo install flip-link
-# Installs the probe-rs tools, including probe-rs run, our recommended default runner
-cargo install --locked probe-rs-tools
-# If you want to use elf2uf2-rs instead, do...
 cargo install --locked elf2uf2-rs
+# If you want to use a debug probe instead, uncoment the following line and comment out the line above
+# cargo install --locked probe-rs-tools
 ```
 If you get the error ``binary `cargo-embed` already exists`` during installation of probe-rs, run `cargo uninstall cargo-embed` to uninstall your older version of cargo-embed before trying again.
 
@@ -165,31 +173,21 @@ Some of the options for your `runner` are listed below:
 
 	*Step 5* - Launch a debug session by choosing `Run`>`Start Debugging` (or press F5)
 
-* **Loading a UF2 over USB**  
-	*Step 1* - Install [`elf2uf2-rs`](https://github.com/JoNil/elf2uf2-rs):
+* **Using a debug probe with probe-rs**  
+	*Step 1* - Install [`probe-rs`](https://probe.rs/):
 
 	```console
-	$ cargo install elf2uf2-rs --locked
+	$ cargo install probe-rs --locked
 	```
 
 	*Step 2* - Modify `.cargo/config` to change the default runner
 
 	```toml
 	[target.`cfg(all(target-arch = "arm", target_os = "none"))`]
-	runner = "elf2uf2-rs -d"
+	runner = "probe-rs run --chip RP2040"
 	```
 
-	The all-Arm wildcard `'cfg(all(target_arch = "arm", target_os = "none"))'` is used
-	by default in the template files, but may also be replaced by
-	`thumbv6m-none-eabi`.
-
-	*Step 3* - Boot your RP2040 into "USB Bootloader mode", typically by rebooting
-	whilst holding some kind of "Boot Select" button. On Linux, you will also need
-	to 'mount' the device, like you would a USB Thumb Drive.
-
-	*Step 4* - Use `cargo run`, which will compile the code and start the
-	specified 'runner'. As the 'runner' is the `elf2uf2-rs` tool, it will build a UF2
-	file and copy it to your RP2040.
+	*Step 4* - Use `cargo run`, which will run the project on the board using `probe-rs`
 
 	```console
 	$ cargo run --release
@@ -242,14 +240,6 @@ rp2040-hal = { version="0.10", features=["rt", "critical-section-impl", "rom-v2-
 
 <!-- ROADMAP -->
 
-## Roadmap
-
-NOTE These packages are under active development. As such, it is likely to
-remain volatile until a 1.0.0 release.
-
-See the [open issues](https://github.com/rp-rs/rp2040-project-template/issues) for a list of
-proposed features (and known issues).
-
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -261,25 +251,19 @@ The steps are:
 3. Make some changes to the code or documentation.
 4. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 5. Push to the Feature Branch (`git push origin feature/AmazingFeature`)
-6. Create a [New Pull Request](https://github.com/rp-rs/rp-hal/pulls)
+6. Create a [New Pull Request](https://github.com/moritztim/serial-character-display/pulls)
 7. An admin will review the Pull Request and discuss any changes that may be required.
 8. Once everyone is happy, the Pull Request can be merged by an admin, and your work is part of our project!
 
 ## Code of Conduct
 
 Contribution to this crate is organized under the terms of the [Rust Code of
-Conduct][CoC], and the maintainer of this crate, the [rp-rs team], promises
+Conduct](CODE_OF_CONDUCT.md), and the maintainer of this crate promises
 to intervene to uphold that code of conduct.
-
-[CoC]: CODE_OF_CONDUCT.md
-[rp-rs team]: https://github.com/orgs/rp-rs/teams/rp-rs
 
 ## License
 
-The contents of this repository are dual-licensed under the [_MIT OR Apache
-2.0_ License](LICENSE). That means you can chose either the MIT licence or the
-Apache-2.0 licence when you re-use this code. See [`LICENSE-MIT`](LICENSE-MIT) or [`LICENSE-APACHE-2.0`](LICENSE-APACHE-2.0) for more
-information on each specific licence.
+The contents of this repository are licensed under the [MIT License](LICENSE).
 
 Any submissions to this project (e.g. as Pull Requests) must be made available
 under these terms.
