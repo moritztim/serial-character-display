@@ -213,31 +213,31 @@ Some of the options for your `runner` are listed below:
 </details>
 <!-- Notes on using rp2040_hal and rp2040_boot2 -->
 <details open="open">
-	<summary><h2 style="display: inline-block" id="notes-on-using-rp2040_boot2">Notes on using rp2040_boot2</h2></summary>
+<summary><h2 style="display: inline-block" id="notes-on-using-rp2040_boot2">Notes on using rp2040_boot2</h2></summary>
 
-	The second-stage boot loader must be written to the .boot2 section. That
-	is usually handled by the board support package (e.g.`rp-pico`). If you don't use
-	one, you should initialize the boot loader manually. This can be done by adding the
-	following to the beginning of main.rs:
-	```rust
-	use rp2040_boot2;
-	#[link_section = ".boot2"]
-	#[used]
-	pub static BOOT_LOADER: [u8; 256] = rp2040_boot2::BOOT_LOADER_W25Q080;
-	```
+The second-stage boot loader must be written to the .boot2 section. That
+is usually handled by the board support package (e.g.`rp-pico`). If you don't use
+one, you should initialize the boot loader manually. This can be done by adding the
+following to the beginning of main.rs:
+```rust
+use rp2040_boot2;
+#[link_section = ".boot2"]
+#[used]
+pub static BOOT_LOADER: [u8; 256] = rp2040_boot2::BOOT_LOADER_W25Q080;
+```
 
 </details>
 
 <!-- Feature flags -->
 <details open="open">
-	<summary><h2 style="display: inline-block" id="feature-flags">Feature flags</h2></summary>
+<summary><h2 style="display: inline-block" id="feature-flags">Feature flags</h2></summary>
 
-	There are several [feature flags in rp2040-hal](https://docs.rs/rp2040-hal/latest/rp2040_hal/#crate-features).
-	If you want to enable some of them, uncomment the `rp2040-hal` dependency in `Cargo.toml` and add the
-	desired feature flags there. For example, to enable ROM functions for f64 math using the feature `rom-v2-intrinsics`:
-	```
-	rp2040-hal = { version="0.10", features=["rt", "critical-section-impl", "rom-v2-intrinsics"] }
-	```
+There are several [feature flags in rp2040-hal](https://docs.rs/rp2040-hal/latest/rp2040_hal/#crate-features).
+If you want to enable some of them, uncomment the `rp2040-hal` dependency in `Cargo.toml` and add the
+desired feature flags there. For example, to enable ROM functions for f64 math using the feature `rom-v2-intrinsics`:
+```
+rp2040-hal = { version="0.10", features=["rt", "critical-section-impl", "rom-v2-intrinsics"] }
+```
 </details>
 
 <!-- ROADMAP -->
