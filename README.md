@@ -270,5 +270,4 @@ under these terms.
 
 ## Contact
 
-Raise an issue: [https://github.com/rp-rs/rp2040-project-template/issues](https://github.com/rp-rs/rp2040-project-template/issues)
-Chat to us on Matrix: [#rp-rs:matrix.org](https://matrix.to/#/#rp-rs:matrix.org)
+[Raise an issue](https://github.com/moritztim/serial-character-display/issues)
