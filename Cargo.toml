@@ -13,15 +13,8 @@ defmt = "0.3"
 defmt-rtt = "0.4"
 panic-probe = { version = "0.3", features = ["print-defmt"] }
 
-# We're using a Pico by default on this template
-rp-pico = "0.9"
-
-# but you can use any BSP. Uncomment this to use the pro_micro_rp2040 BSP instead
-# sparkfun-pro-micro-rp2040 = "0.8"
-
-# If you're not going to use a Board Support Package you'll need these:
-# rp2040-hal = { version="0.10", features=["rt", "critical-section-impl"] }
-# rp2040-boot2 = "0.3"
+# We're using a Waveshare RP2040-Zero develepment board.
+waveshare-rp2040-zero = "0.8.0" #https://crates.io/crates/waveshare-rp2040-zero#using
 
 # cargo build/run
 [profile.dev]
