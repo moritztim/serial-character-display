@@ -194,12 +194,9 @@ Some of the options for your `runner` are listed below:
 	```
 
 * **Loading with picotool**  
-	As ELF files produced by compiling Rust code are completely compatible with ELF
-	files produced by compiling C or C++ code, you can also use the Raspberry Pi
-	tool [picotool](https://github.com/raspberrypi/picotool). The only thing to be
-	aware of is that picotool expects your ELF files to have a `.elf` extension, and
-	by default Rust does not give the ELF files any extension. You can fix this by
-	simply renaming the file.
+	As ELF files produced by compiling Rust code are completely compatible with ELF files produced by compiling C or C++ code, you can also use the Raspberry Pi
+	tool [picotool](https://github.com/raspberrypi/picotool). The only thing to be aware of is that picotool expects your ELF files to have a `.elf` extension, and
+	by default Rust does not give the ELF files any extension. You can fix this by simply renaming the file.
 
 	This means you can't easily use it as a cargo runner - yet.
 
@@ -213,10 +210,8 @@ Some of the options for your `runner` are listed below:
 <details open="open">
 <summary><h2 style="display: inline-block" id="notes-on-using-rp2040_boot2">Notes on using rp2040_boot2</h2></summary>
 
-The second-stage boot loader must be written to the .boot2 section. That
-is usually handled by the board support package (e.g.`rp-pico`). If you don't use
-one, you should initialize the boot loader manually. This can be done by adding the
-following to the beginning of main.rs:
+The second-stage boot loader must be written to the .boot2 section. That is usually handled by the board support package (e.g.`rp-pico`). If you don't use
+one, you should initialize the boot loader manually. This can be done by adding the following to the beginning of main.rs:
 ```rust
 use rp2040_boot2;
 #[link_section = ".boot2"]
@@ -231,8 +226,7 @@ pub static BOOT_LOADER: [u8; 256] = rp2040_boot2::BOOT_LOADER_W25Q080;
 <summary><h2 style="display: inline-block" id="feature-flags">Feature flags</h2></summary>
 
 There are several [feature flags in rp2040-hal](https://docs.rs/rp2040-hal/latest/rp2040_hal/#crate-features).
-If you want to enable some of them, uncomment the `rp2040-hal` dependency in `Cargo.toml` and add the
-desired feature flags there. For example, to enable ROM functions for f64 math using the feature `rom-v2-intrinsics`:
+If you want to enable some of them, uncomment the `rp2040-hal` dependency in `Cargo.toml` and add the desired feature flags there. For example, to enable ROM functions for f64 math using the feature `rom-v2-intrinsics`:
 ```
 rp2040-hal = { version="0.10", features=["rt", "critical-section-impl", "rom-v2-intrinsics"] }
 ```
@@ -257,16 +251,13 @@ The steps are:
 
 ## Code of Conduct
 
-Contribution to this crate is organized under the terms of the [Rust Code of
-Conduct](CODE_OF_CONDUCT.md), and the maintainer of this crate promises
-to intervene to uphold that code of conduct.
+Contribution to this crate is organized under the terms of the [Rust Code of Conduct](CODE_OF_CONDUCT.md), and the maintainer of this crate promises to intervene to uphold that code of conduct.
 
 ## License
 
 The contents of this repository are licensed under the [MIT License](LICENSE).
 
-Any submissions to this project (e.g. as Pull Requests) must be made available
-under these terms.
+Any submissions to this project (e.g. as Pull Requests) must be made available under these terms.
 
 ## Contact
 
