@@ -1,3 +1,5 @@
 ﻿scope,ai-author,note,ai-content-declaration:ai-name,ai-content-declaration:level,ai-content-declaration:details,ai-content-declaration:version
+code,Anthropic,,claude-3-5-sonnet-20241022,non-creative,conversational assistance,1.00
+code,OpenAI,See GENERATIVE_AI.md#fn-github_copilot,code-davinci-002,non-creative,in-line completion,1.00
 documentation,OpenAI,See GENERATIVE_AI.md#fn-github_copilot,code-davinci-002,non-creative,conversational assistance,1.00
 documentation,Anthropic,,claude-3-5-haiku-20241022,non-creative,conversational assistance,1.00

@@ -7,11 +7,13 @@ A note will be included near any content that was generated with [creative assis
 - > [This project was created with non-creative assistance from a Generative AI.][AI Content Declaration v1.0.0/non-creative]
 
 The following models were used:
+- [Anthropic][Anthropic]'s [`Claude`][Claude], version [`3.5 Sonnet`][Claude 3.5 Sonnet]
 - [Anthropic][Anthropic]'s [`Claude`][Claude], version [`3.5 Haiku`][Claude 3.5 Haiku]
 - [OpenAi][OpenAI]'s [`Codex`][Codex][^github-copilot]
 
 [Anthropic]: https://anthropic.com/
 [Claude]: https://anthropic.com/claude/
+[Claude 3.5 Sonnet]: https://www.anthropic.com/claude/sonnet
 [Claude 3.5 Haiku]: https://www.anthropic.com/claude/haiku
 
 [OpenAI]: https://openai.com/
