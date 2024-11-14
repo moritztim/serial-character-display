@@ -1,0 +1,3 @@
+﻿scope,ai-author,note,ai-content-declaration:ai-name,ai-content-declaration:level,ai-content-declaration:details,ai-content-declaration:version
+documentation,OpenAI,See GENERATIVE_AI.md#fn-github_copilot,code-davinci-002,non-creative,conversational assistance,1.00
+documentation,Anthropic,,claude-3-5-haiku-20241022,non-creative,conversational assistance,1.00

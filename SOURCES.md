@@ -2,6 +2,7 @@
 I took a lot of inspiration and knowledge other projects I found online.
 Some parts of my code are entirely based on snippets from other projects, in which cases, the source is noted in the documentation.
 Thanks to the authors for their work and documentation and for making it available to the community!
+Some generative AI was also used, which is documented in the [Generative AI Content Declaration](GENERATIVE_AI.md).
 Here is a list of all sources, grouped by topic, sorted by date of discovery:
 
 ## WaveShare RP2040-Zero development board library
