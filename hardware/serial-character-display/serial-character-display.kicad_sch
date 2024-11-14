@@ -1167,8 +1167,16 @@
 		(uuid "2b855cf6-cddb-45c7-a5f2-22b29647c746")
 	)
 	(no_connect
+		(at 152.4 97.79)
+		(uuid "428f9dcd-b212-47b4-8a4b-08054060a204")
+	)
+	(no_connect
 		(at 152.4 113.03)
 		(uuid "5b188702-ee31-41b5-89e4-ead84386159b")
+	)
+	(no_connect
+		(at 177.8 113.03)
+		(uuid "739c10e2-2d71-42a0-bc84-d92348fe8db5")
 	)
 	(no_connect
 		(at 152.4 105.41)
