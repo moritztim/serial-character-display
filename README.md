@@ -252,6 +252,7 @@ The steps are:
 ## Code of Conduct
 
 Contribution to this crate is organized under the terms of the [Rust Code of Conduct](CODE_OF_CONDUCT.md), and the maintainer of this crate promises to intervene to uphold that code of conduct.
+Contribution to this crate is organized under the terms documented [here](CODE_OF_CONDUCT.md), and the maintainer of this crate promises to intervene to uphold that code of conduct.
 
 ## License
 
