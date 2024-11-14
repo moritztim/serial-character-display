@@ -6,8 +6,8 @@ Some generative AI was also used, which is documented in the [Generative AI Cont
 Here is a list of all sources, grouped by topic, sorted by date of discovery:
 
 ## WaveShare RP2040-Zero development board library
-- [Code][rp-hal-boards/waveshare-rp-20240-zero/lib.rs] from the [WaveShare RP2040-Zero library][Waveshare RP2040-Zero library] by [rp-rs](https://github.com/rp-rs), and the corresponding [implementation example][rp-hal-boards/waveshare-rp-2040-zero/examples/waveshare_rp2040_zero_neopixel_rainbow.rs]
+- [Code][rp-hal-boards/waveshare-rp20240-zero/lib.rs] from the [WaveShare RP2040-Zero library][rp-hal-boards/waveshare-rp2040-zero] by [rp-rs](https://github.com/rp-rs), and the corresponding [implementation example][rp-hal-boards/waveshare-rp-2040-zero/examples/waveshare_rp2040_zero_neopixel_rainbow.rs]
 
-[rp-hal-boards/waveshare-rp-20240-zero/lib.rs]: https://github.com/rp-rs/rp-hal-boards/blob/main/boards/waveshare-rp2040-zero/src/lib.rs
+[rp-hal-boards/waveshare-rp20240-zero/lib.rs]: https://github.com/rp-rs/rp-hal-boards/blob/main/boards/waveshare-rp2040-zero/src/lib.rs
 [rp-hal-boards/waveshare-rp-2040-zero/examples/waveshare_rp2040_zero_neopixel_rainbow.rs]: https://github.com/rp-rs/rp-hal-boards/blob/main/boards/waveshare-rp2040-zero/examples/waveshare_rp2040_zero_neopixel_rainbow.rs
-[Waveshare RP2040-Zero library]: https://github.com/rp-rs/rp-hal-boards/tree/main/boards/waveshare-rp2040-zero
+[rp-hal]: https://github.com/rp-rs/rp-hal
